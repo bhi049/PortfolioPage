@@ -1,11 +1,15 @@
 import './App.css'
+import Header from './components/Header';
+import Hero from './components/Hero';
+
 
 function App() {
   return (
-    <div className="text-4xl font-bold text-blue-600 underline text-center mt-20">
-      Tailwind toimii!
-    </div>
+    <>
+      <Header />
+      <Hero />
+    </>
   );
-}
+};
 
 export default App;
