@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { MdEmail, MdPhone } from 'react-icons/md';
+import profilePicture from '../assets/profilePicture.png';
+
 
 
 const Hero: React.FC = () => {
@@ -11,13 +12,22 @@ const Hero: React.FC = () => {
 
 
       <div className="relative z-10">
+        <motion.img
+          src={profilePicture}
+          alt="Nikolas Kataja"
+          style={{ width: '350px', height: '350px', borderRadius: '50%' }}
+          className="mb-6 object-cover border-4 border-white shadow-lg"
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1 }}
+        />
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
           className="text-5xl md:text-7xl font-bold leading-tight"
         >
-          Hei, olen Nikolas
+          Hello, my name is Nikolas Kataja
         </motion.h1>
 
         <motion.p
@@ -26,34 +36,8 @@ const Hero: React.FC = () => {
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-4 text-lg md:text-2xl text-gray-300"
         >
-          Ohjelmistokehittäjä opiskelija ja intohimoinen koodari
+          I’m, a software development student eager to build, learn, and innovate.
         </motion.p>
-
-        <motion.div
-          className="text-sm text-gray-400 space-y-2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.5 }}
-        >
-          <p className="flex items-center justify-center gap-2 group">
-            <MdEmail className="text-xl text-blue-400 group-hover:scale-110 transition-transform" />
-            <a
-              href="mailto:nikolas.kataja@gmail.com"
-              className="!text-white no-underline hover:text-blue-400 transition"
-            >
-              nikolas.kataja@gmail.com
-            </a>
-          </p>
-          <p className="flex items-center justify-center gap-2 group">
-            <MdPhone className="text-xl text-blue-400 group-hover:scale-110 transition-transform" />
-            <a
-              href="tel:+358452884230"
-              className="!text-white no-underline hover:text-blue-400 transition"
-            >
-              +358 45 288 4230
-            </a>
-          </p>
-        </motion.div>
 
       </div>
     </section>
